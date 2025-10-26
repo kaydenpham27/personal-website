@@ -10,7 +10,7 @@ export default defineConfig({
   base: "/personal-website/",
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-    }
-  }
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
 });
