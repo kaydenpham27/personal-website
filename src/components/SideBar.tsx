@@ -1,3 +1,4 @@
+import { UserRound } from "lucide-react";
 import React from "react";
 
 type GitHubRepoData = {
@@ -139,10 +140,16 @@ const LinkedIn = () => {
 
 export const SideBar = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-col w-full h-17 place-content-center">
+    <div className="flex flex-col w-full h-15 place-content-center pl-10">
       {/* Header */}
       <div className="grid grid-cols-2 md:grid-cols-[70%_30%]">
-        <div className="">icon</div>
+        <div className="flex flex-row space-x-10 items-center">
+          <div>
+            <UserRound className="w-10 h-10" />
+          </div>
+          {/* TODO: When lick, should redirect to another page */}
+          <div>Posts</div>
+        </div>
         <div className="flex flex-row space-x-10">
           <GitHubStats repoName="personal-website" ownerName="kaydenpham27" />
           <LinkedIn />
