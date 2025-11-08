@@ -140,8 +140,8 @@ const LinkedIn = () => {
 
 export const SideBar = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-[70%_30%] w-full bg-white h-15 items-center pl-20 pr-20">
+    <>
+      <div className="flex flex-row w-full bg-white h-15 items-center pl-20 pr-20 justify-between">
         <div className="flex flex-row space-x-10">
           <div className="flex flex-col items-center space-y-1">
             <UserRound className="w-8 h-8" />
@@ -151,18 +151,17 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
             <NotebookText className="w-8 h-8" />
             <Typography.Medium> Posts </Typography.Medium>
           </div>
-
           <div className="flex flex-col items-center space-y-1">
             <Folder className="w-8 h-8" />
             <Typography.Medium> Blogs </Typography.Medium>
           </div>
         </div>
-        <div className="flex flex-row space-x-5 justify-end">
+        <div className="flex flex-row space-x-5 items-center">
           <GitHubStats repoName="personal-website" ownerName="kaydenpham27" />
           <LinkedIn />
         </div>
       </div>
       {children}
-    </div>
+    </>
   );
 };
