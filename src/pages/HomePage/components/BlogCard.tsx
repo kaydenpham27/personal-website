@@ -1,9 +1,13 @@
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import Typography from "@/components/ui/typography";
 
-export const BlogCard = () => {
+type BlogCardProps = {
+  className?: string;
+};
+
+export const BlogCard = ({ className }: BlogCardProps) => {
   return (
-    <Card>
+    <Card className={className}>
       <CardHeader>
         <CardTitle>
           <Typography.H1>Blog</Typography.H1>

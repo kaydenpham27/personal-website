@@ -19,7 +19,7 @@ export const InfoCard = ({}: InfoCardProps) => {
           <PersonalDetailsCard />
           <img
             src="./public/AVA.png"
-            className="w-75 place-self-center rounded-xs border-solid border-2 border-gray-700"
+            className="w-75 place-self-center rounded-full border-solid border-2 border-gray-700"
           />
         </CardContent>
       </Card>
