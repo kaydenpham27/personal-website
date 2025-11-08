@@ -1,6 +1,7 @@
 import { Folder, NotebookText, UserRound } from "lucide-react";
 import React from "react";
 import Typography from "./ui/typography";
+import { Link } from "react-router";
 
 type GitHubRepoData = {
   forks_count: number;
@@ -42,7 +43,7 @@ const GitHubStats = (props: GitHubStatsProps) => {
     <a
       href={repoData?.html_url}
       title="Go to repository"
-      className="flex flex-row space-x-2 justify-center"
+      className="flex flex-row space-x-2"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -66,7 +67,7 @@ const GitHubStats = (props: GitHubStatsProps) => {
         </svg>
       </div>
       <div className="flex flex-col">
-        <div className="flex flex-wrap text-[15px]">
+        <div className="flex w-fit">
           <h4>{repoData?.full_name}</h4>
         </div>
         <div className="flex flex-row space-x-2">
@@ -140,31 +141,39 @@ const LinkedIn = () => {
 
 export const SideBar = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-col w-full h-15 place-content-center bg-white">
-      {/* Header */}
-      <div className="grid grid-cols-2 md:grid-cols-[70%_30%]">
-        <div className="flex flex-row space-x-10 items-center pl-20">
-          <div className="flex flex-col items-center space-y-1">
+    <>
+      <div className="flex flex-row w-full bg-white h-15 items-center pl-20 pr-20 justify-between">
+        <div className="flex flex-row space-x-10">
+          <Link
+            to="/"
+            className="flex flex-col items-center space-y-1 cursor-pointer hover:text-blue-600 transition-colors"
+          >
             <UserRound className="w-8 h-8" />
             <Typography.Medium> Home </Typography.Medium>
-          </div>
-          {/* TODO: When lick, should redirect to another page */}
-          <div className="flex flex-col items-center space-y-1">
+          </Link>
+
+          <Link
+            to="/posts"
+            className="flex flex-col items-center space-y-1 cursor-pointer hover:text-blue-600 transition-colors"
+          >
             <NotebookText className="w-8 h-8" />
             <Typography.Medium> Posts </Typography.Medium>
-          </div>
+          </Link>
 
-          <div className="flex flex-col items-center space-y-1">
+          <Link
+            to="/blogs"
+            className="flex flex-col items-center space-y-1 cursor-pointer hover:text-blue-600 transition-colors"
+          >
             <Folder className="w-8 h-8" />
             <Typography.Medium> Blogs </Typography.Medium>
-          </div>
+          </Link>
         </div>
-        <div className="flex flex-row space-x-5">
+        <div className="flex flex-row space-x-5 items-center">
           <GitHubStats repoName="personal-website" ownerName="kaydenpham27" />
           <LinkedIn />
         </div>
       </div>
       {children}
-    </div>
+    </>
   );
 };
