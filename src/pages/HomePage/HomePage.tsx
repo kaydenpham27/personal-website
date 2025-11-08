@@ -1,4 +1,4 @@
-import { BlogCard, AboutMeCard } from "./components";
+import { NewsFeedCard, AboutMeCard } from "./components";
 import { ContactMeCard } from "./components/ContactMeCard";
 
 type HomePageProps = {
@@ -11,7 +11,7 @@ export const HomePage = ({}: HomePageProps) => {
       <div className="grid grid-cols-1 md:grid-cols-[70%_1%_29%] pt-10">
         <AboutMeCard />
         <div></div>
-        <BlogCard />
+        <NewsFeedCard />
       </div>
 
       <div className="pt-6 pl-40 pr-40">

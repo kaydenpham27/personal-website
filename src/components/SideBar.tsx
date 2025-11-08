@@ -1,6 +1,7 @@
 import { Folder, NotebookText, UserRound } from "lucide-react";
 import React from "react";
 import Typography from "./ui/typography";
+import { Link } from "react-router";
 
 type GitHubRepoData = {
   forks_count: number;
@@ -143,18 +144,29 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
     <>
       <div className="flex flex-row w-full bg-white h-15 items-center pl-20 pr-20 justify-between">
         <div className="flex flex-row space-x-10">
-          <div className="flex flex-col items-center space-y-1">
+          <Link
+            to="/"
+            className="flex flex-col items-center space-y-1 cursor-pointer hover:text-blue-600 transition-colors"
+          >
             <UserRound className="w-8 h-8" />
             <Typography.Medium> Home </Typography.Medium>
-          </div>
-          <div className="flex flex-col items-center space-y-1">
+          </Link>
+
+          <Link
+            to="/posts"
+            className="flex flex-col items-center space-y-1 cursor-pointer hover:text-blue-600 transition-colors"
+          >
             <NotebookText className="w-8 h-8" />
             <Typography.Medium> Posts </Typography.Medium>
-          </div>
-          <div className="flex flex-col items-center space-y-1">
+          </Link>
+
+          <Link
+            to="/blogs"
+            className="flex flex-col items-center space-y-1 cursor-pointer hover:text-blue-600 transition-colors"
+          >
             <Folder className="w-8 h-8" />
             <Typography.Medium> Blogs </Typography.Medium>
-          </div>
+          </Link>
         </div>
         <div className="flex flex-row space-x-5 items-center">
           <GitHubStats repoName="personal-website" ownerName="kaydenpham27" />
