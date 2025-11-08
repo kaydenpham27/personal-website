@@ -1,7 +1,8 @@
-import Typography from "@/components/ui/typography";
 import { BlogCard, InfoCard } from "./components";
 
-type HomePageProps = {};
+type HomePageProps = {
+  [key: string]: string;
+};
 
 export const HomePage = ({}: HomePageProps) => {
   return (

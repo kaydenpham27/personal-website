@@ -1,16 +1,10 @@
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Typography from "@/components/ui/typography";
 import { PersonalDetailsCard } from "./PersonalDetailsCard";
 
-type InfoCardProps = {};
+type InfoCardProps = {
+  [key: string]: string;
+};
 
 export const InfoCard = ({}: InfoCardProps) => {
   return (
@@ -25,7 +19,7 @@ export const InfoCard = ({}: InfoCardProps) => {
           <PersonalDetailsCard />
           <img
             src="./public/AVA.png"
-            className="w-60 place-self-center rounded-xs border-solid border-2 border-gray-700"
+            className="w-75 place-self-center rounded-xs border-solid border-2 border-gray-700"
           />
         </CardContent>
       </Card>
