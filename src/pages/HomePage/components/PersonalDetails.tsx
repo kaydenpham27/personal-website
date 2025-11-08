@@ -18,7 +18,7 @@ const DetailsRow = ({ iconUrl, title, description }: DetailsRowProps) => {
   );
 };
 
-export const PersonalDetailsCard = () => {
+export const PersonalDetails = () => {
   return (
     <div className="flex flex-col justify-start items-start pl-4">
       <Typography.H2> Software Engineer </Typography.H2>
@@ -43,7 +43,7 @@ export const PersonalDetailsCard = () => {
       <DetailsRow
         iconUrl="./public/enjoy.png"
         title="Hobbies"
-        description="I love doing Competive Programming where I have ... 
+        description="I love doing Competive Programming ...
         "
       />
     </div>

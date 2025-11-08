@@ -1,3 +1,3 @@
-export * from "./InfoCard";
-export * from "./PersonalDetailsCard";
+export * from "./AboutMeCard";
+export * from "./PersonalDetails";
 export * from "./BlogCard";

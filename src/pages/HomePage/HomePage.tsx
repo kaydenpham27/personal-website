@@ -1,4 +1,4 @@
-import { BlogCard, InfoCard } from "./components";
+import { BlogCard, AboutMeCard } from "./components";
 import { ContactMeCard } from "./components/ContactMeCard";
 
 type HomePageProps = {
@@ -9,12 +9,12 @@ export const HomePage = ({}: HomePageProps) => {
   return (
     <div className="flex flex-col pl-50 pr-50">
       <div className="grid grid-cols-1 md:grid-cols-[70%_1%_29%] pt-10">
-        <InfoCard />
+        <AboutMeCard />
         <div></div>
         <BlogCard />
       </div>
 
-      <div className="pt-6">
+      <div className="pt-6 pl-40 pr-40">
         <ContactMeCard />
       </div>
     </div>

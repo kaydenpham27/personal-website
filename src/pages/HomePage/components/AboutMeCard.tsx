@@ -1,12 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Typography from "@/components/ui/typography";
-import { PersonalDetailsCard } from "./PersonalDetailsCard";
+import { PersonalDetails } from "./PersonalDetails";
 
-type InfoCardProps = {
+type AboutMeCardProps = {
   [key: string]: string;
 };
 
-export const InfoCard = ({}: InfoCardProps) => {
+export const AboutMeCard = ({}: AboutMeCardProps) => {
   return (
     <div className="w-full">
       <Card className="w-full">
@@ -16,7 +16,7 @@ export const InfoCard = ({}: InfoCardProps) => {
           </CardTitle>
         </CardHeader>
         <CardContent className="grid grid-cols-1 md:grid-cols-[65%_35%] gap-4">
-          <PersonalDetailsCard />
+          <PersonalDetails />
           <img
             src="./public/AVA.png"
             className="w-75 place-self-center rounded-full border-solid border-2 border-gray-700"
