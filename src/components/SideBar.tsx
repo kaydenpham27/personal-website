@@ -140,28 +140,30 @@ const LinkedIn = () => {
 
 export const SideBar = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-col w-full h-15 place-content-center bg-white">
-      {/* Header */}
-      <div className="grid grid-cols-2 md:grid-cols-[70%_30%]">
-        <div className="flex flex-row space-x-10 items-center pl-20">
-          <div className="flex flex-col items-center space-y-1">
-            <UserRound className="w-8 h-8" />
-            <Typography.Medium> Home </Typography.Medium>
-          </div>
-          {/* TODO: When lick, should redirect to another page */}
-          <div className="flex flex-col items-center space-y-1">
-            <NotebookText className="w-8 h-8" />
-            <Typography.Medium> Posts </Typography.Medium>
-          </div>
+    <div>
+      <div className="flex flex-col w-full h-15 place-content-center bg-white">
+        {/* Header */}
+        <div className="grid grid-cols-2 md:grid-cols-[70%_30%]">
+          <div className="flex flex-row space-x-10 items-center pl-20">
+            <div className="flex flex-col items-center space-y-1">
+              <UserRound className="w-8 h-8" />
+              <Typography.Medium> Home </Typography.Medium>
+            </div>
+            {/* TODO: When lick, should redirect to another page */}
+            <div className="flex flex-col items-center space-y-1">
+              <NotebookText className="w-8 h-8" />
+              <Typography.Medium> Posts </Typography.Medium>
+            </div>
 
-          <div className="flex flex-col items-center space-y-1">
-            <Folder className="w-8 h-8" />
-            <Typography.Medium> Blogs </Typography.Medium>
+            <div className="flex flex-col items-center space-y-1">
+              <Folder className="w-8 h-8" />
+              <Typography.Medium> Blogs </Typography.Medium>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-row space-x-5">
-          <GitHubStats repoName="personal-website" ownerName="kaydenpham27" />
-          <LinkedIn />
+          <div className="flex flex-row space-x-5">
+            <GitHubStats repoName="personal-website" ownerName="kaydenpham27" />
+            <LinkedIn />
+          </div>
         </div>
       </div>
       {children}
