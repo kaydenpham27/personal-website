@@ -2,11 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Typography from "@/components/ui/typography";
 import { PersonalDetails } from "./PersonalDetails";
 
-type AboutMeCardProps = {
-  [key: string]: string;
-};
-
-export const AboutMeCard = ({}: AboutMeCardProps) => {
+export const AboutMeCard = () => {
   return (
     <div className="w-full">
       <Card className="w-full">
