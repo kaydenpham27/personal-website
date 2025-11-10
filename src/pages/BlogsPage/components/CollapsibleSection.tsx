@@ -50,11 +50,12 @@ export const CollapsibleSection = ({
           >
             {title}
           </Typography.Large>
-          {open ? (
-            <ChevronDown className="transition-transform group-hover:text-blue-600 hover:brightness-125 " />
-          ) : (
-            <ChevronRight className="transition-transform group-hover:text-blue-600 hover:brightness-125" />
-          )}
+          <motion.div
+            animate={{ rotate: open ? 0 : -90 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <ChevronDown className="group-hover:text-blue-600 hover:brightness-125" />
+          </motion.div>{" "}
         </div>
         <AnimatePresence>
           {open && (
