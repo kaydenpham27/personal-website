@@ -1,6 +1,6 @@
 import { NewsFeedCard, AboutMeCard } from "./components";
 import { ContactMeCard } from "./components/ContactMeCard";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 
 export const HomePage = () => {
   return (
