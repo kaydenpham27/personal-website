@@ -31,7 +31,7 @@ const sidebarData = {
 export const NavSideBar = () => {
   return (
     <div className="flex flex-col space-y-2">
-      <Typography.H4> Blogs Hierarchy </Typography.H4>
+      <Typography.H3 className="font-normal"> Blogs Hierarchy </Typography.H3>
       <div className="flex flex-col">
         <CollapsibleSection
           title={sidebarData.title}

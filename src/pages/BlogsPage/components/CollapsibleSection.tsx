@@ -1,5 +1,5 @@
 import Typography from "@/components/ui/typography";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import React from "react";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -46,7 +46,7 @@ export const CollapsibleSection = ({
           onClick={() => setOpen(!open)}
         >
           <Typography.Large
-            className={`${getPadLeft(depth)} group-hover:text-blue-600 transition-colors`}
+            className={`${getPadLeft(depth)} font-normal group-hover:text-blue-600 transition-colors`}
           >
             {title}
           </Typography.Large>
