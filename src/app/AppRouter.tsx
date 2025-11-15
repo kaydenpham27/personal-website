@@ -1,6 +1,7 @@
 import { SideBar } from "@/components/SideBar";
 import { BlogsPage } from "@/pages/BlogsPage";
 import { HomePage } from "@/pages/HomePage";
+import { ProjectsPage } from "@/pages/ProjectsPage";
 import { BrowserRouter, Route, Routes } from "react-router";
 
 export const AppRouter = () => {
@@ -9,7 +10,7 @@ export const AppRouter = () => {
       <SideBar>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/posts" element={<BlogsPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="*" element={<HomePage />} />
         </Routes>

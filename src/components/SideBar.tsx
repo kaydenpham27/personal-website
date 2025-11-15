@@ -169,7 +169,7 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
           </Link>
 
           <Link
-            to="/posts"
+            to="/projects"
             className="flex flex-col items-center space-y-1 cursor-pointer hover:text-blue-600 transition-colors"
           >
             <NotebookText className="w-9 h-9 text-white" />
