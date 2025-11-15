@@ -10,6 +10,22 @@ const projects: ProjectCardProps[] = [
     githubUrl: "https://github.com/kaydenpham27/Telegram.git",
     imgPath: "./public/telegram.png",
   },
+  {
+    title: "Telegram Clone",
+    description:
+      "I basically cloned telegram I basically cloned telegram I basically cloned telegramI basically cloned telegram I basically cloned telegram",
+    tags: ["AWS", "Cloud", "CI/CD", "Backend", "TypeScript", "Tailwind"],
+    githubUrl: "https://github.com/kaydenpham27/Telegram.git",
+    imgPath: "./public/telegram.png",
+  },
+  {
+    title: "Telegram Clone",
+    description:
+      "I basically cloned telegram I basically cloned telegram I basically cloned telegramI basically cloned telegram I basically cloned telegram",
+    tags: ["AWS", "Cloud", "CI/CD", "Backend", "TypeScript", "Tailwind"],
+    githubUrl: "https://github.com/kaydenpham27/Telegram.git",
+    imgPath: "./public/telegram.png",
+  },
 ];
 
 export const ProjectsPage = () => {
@@ -20,7 +36,7 @@ export const ProjectsPage = () => {
       transition={{ duration: 0.3 }}
       className="space-y-2"
     >
-      <div className="flex flex-col pl-50 pr-50 pt-10 items-center">
+      <div className="grid grid-cols-3 pl-50 pr-50 pt-10 items-center gap-10">
         {projects.map((project, index) => {
           return (
             <ProjectCard

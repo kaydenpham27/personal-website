@@ -208,29 +208,31 @@ export const ProjectCard = ({
   githubUrl,
 }: ProjectCardProps) => {
   return (
-    <Card className="w-100 items-center">
-      <CardContent>
-        <img src={imgPath} className="w-50" />
-      </CardContent>
-      <CardHeader className="w-100">
-        <CardTitle>
-          <Typography.H4>{title}</Typography.H4>
-        </CardTitle>
-        <CardDescription>
-          <Typography.Muted>{description}</Typography.Muted>
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="w-full">
-        <div className="flex flex-row flex-wrap justify-center gap-2">
-          {tags.map((tag) => {
-            return (
-              <Badge className={getProjectCardTagColor(tag)}>
-                <Typography.Small> {tag} </Typography.Small>
-              </Badge>
-            );
-          })}
-        </div>
-      </CardContent>
-    </Card>
+    <a href={githubUrl} title={`View ${title} in details`}>
+      <Card className="w-120 items-center shadow-xl/20 transition-all duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-xl cursor-pointer">
+        <CardContent>
+          <img src={imgPath} className="w-50" />
+        </CardContent>
+        <CardHeader className="w-100">
+          <CardTitle>
+            <Typography.H4>{title}</Typography.H4>
+          </CardTitle>
+          <CardDescription>
+            <Typography.Muted>{description}</Typography.Muted>
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="w-full">
+          <div className="flex flex-row flex-wrap justify-center gap-2">
+            {tags.map((tag) => {
+              return (
+                <Badge key={tag} className={getProjectCardTagColor(tag)}>
+                  <Typography.Small> {tag} </Typography.Small>
+                </Badge>
+              );
+            })}
+          </div>
+        </CardContent>
+      </Card>
+    </a>
   );
 };

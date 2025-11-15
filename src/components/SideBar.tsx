@@ -1,4 +1,4 @@
-import { Folder, NotebookText, UserRound } from "lucide-react";
+import { FolderGit2, PencilLine, UserRound } from "lucide-react";
 import React from "react";
 import Typography from "./ui/typography";
 import { Link } from "react-router";
@@ -159,27 +159,27 @@ const LinkedIn = () => {
 export const SideBar = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div className="flex flex-row w-full bg-[#3ba17b] h-14 items-center pl-20 pr-20 justify-between">
+      <div className="flex flex-row w-full bg-[#2669d5] h-14 items-center pl-20 pr-20 justify-between">
         <div className="flex flex-row space-x-10">
           <Link
             to="/"
             className="flex flex-col items-center space-y-1 cursor-pointer hover:text-blue-600 transition-colors"
           >
-            <UserRound className="w-9 h-9 text-white" />
+            <UserRound className="w-8 h-8 text-white" />
           </Link>
 
           <Link
             to="/projects"
             className="flex flex-col items-center space-y-1 cursor-pointer hover:text-blue-600 transition-colors"
           >
-            <NotebookText className="w-9 h-9 text-white" />
+            <FolderGit2 className="w-8 h-8 text-white" />
           </Link>
 
           <Link
             to="/blogs"
             className="flex flex-col items-center space-y-1 cursor-pointer hover:text-blue-600 transition-colors"
           >
-            <Folder className="w-9 h-9 text-white" />
+            <PencilLine className="w-8 h-8 text-white" />
           </Link>
         </div>
         <div className="flex flex-row space-x-5 items-center">
