@@ -198,20 +198,22 @@ export type ProjectCardProps = {
   tags: ProjectCardTag[];
   githubUrl: string;
   imgPath: string;
+  imgClassName: string;
 };
 
 export const ProjectCard = ({
   title,
   description,
   imgPath,
+  imgClassName,
   tags,
   githubUrl,
 }: ProjectCardProps) => {
   return (
-    <a href={githubUrl} title={`View ${title} in details`}>
-      <Card className="w-120 items-center shadow-xl/20 transition-all duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-xl cursor-pointer">
+    <a href={githubUrl} title={`View ${title} in details`} className="h-full">
+      <Card className="w-120 h-full items-center shadow-xl/20 transition-all duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-xl cursor-pointer">
         <CardContent>
-          <img src={imgPath} className="w-50" />
+          <img src={imgPath} className={imgClassName} />
         </CardContent>
         <CardHeader className="w-100">
           <CardTitle>
