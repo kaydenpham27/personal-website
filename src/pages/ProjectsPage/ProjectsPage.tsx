@@ -8,7 +8,7 @@ const projects: ProjectCardProps[] = [
       "I basically cloned telegram I basically cloned telegram I basically cloned telegramI basically cloned telegram I basically cloned telegram",
     tags: ["AWS", "Cloud", "CI/CD", "Backend", "TypeScript", "Tailwind"],
     githubUrl: "https://github.com/kaydenpham27/Telegram.git",
-    imgPath: "./public/project-images/telegram.png",
+    imgPath: "./project-images/telegram.png",
     imgClassName: "w-30 h-30",
   },
   {
@@ -17,7 +17,7 @@ const projects: ProjectCardProps[] = [
       "I've been doing CP for a while, so I decided to create this repository where I save my solutions for the official ICPC contests and interesting problems from platforms like CodeForces, AtCoder or QOJ",
     tags: ["C++"],
     githubUrl: "https://github.com/kaydenpham27/Competitive-Programming",
-    imgPath: "./public/project-images/icpc.png",
+    imgPath: "./project-images/icpc.png",
     imgClassName: "w-50 h-30",
   },
   {
@@ -26,7 +26,7 @@ const projects: ProjectCardProps[] = [
       "FUSE, a microservice evaluation technique, based on eBPF technology to monitor microservice's behavior at the Kernal level",
     tags: ["Python", "Cloud"],
     githubUrl: "https://github.com/kaydenpham27/MicroserviceEvaluation",
-    imgPath: "./public/project-images/eBPF.png",
+    imgPath: "./project-images/eBPF.png",
     imgClassName: "w-60 h-30",
   },
 ];

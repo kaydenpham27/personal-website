@@ -19,7 +19,7 @@ export const AboutMeCard = ({ className }: AboutMeCardProps) => {
         <CardContent className="grid grid-cols-1 md:grid-cols-[65%_35%] gap-4">
           <PersonalDetails />
           <img
-            src="./public/AVA.png"
+            src="./AVA.png"
             className="w-75 place-self-center rounded-full border-solid border-2 border-gray-700"
           />
         </CardContent>
