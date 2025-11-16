@@ -57,7 +57,7 @@ const ContactForm = () => {
       </div>
       <Button
         variant="outline"
-        className="w-full self-end"
+        className="w-fit self-end"
         onClick={() => {
           setName("");
           setEmail("");
@@ -70,9 +70,13 @@ const ContactForm = () => {
   );
 };
 
-export const ContactMeCard = () => {
+type ContactMeCardProps = {
+  className?: string;
+};
+
+export const ContactMeCard = ({ className }: ContactMeCardProps) => {
   return (
-    <Card>
+    <Card className={className}>
       <CardHeader>
         <CardTitle>
           <Typography.H1> Contact </Typography.H1>
