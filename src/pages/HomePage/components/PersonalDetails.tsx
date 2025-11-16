@@ -35,15 +35,15 @@ export const PersonalDetails = () => {
         iconUrl="./public/energy_drink.png"
         title="Drink"
         description="I love iced long black! Don't really know if 
-        this is what they call it anywhere else, but in Australia, this is a GOATed drink. I can
-        survive only by drinking iced long blacks. An iced long black can boost my software development
-        productivity by INF. 
+        this is what they call it anywhere else, but in Australia, this is a GOATed drink.
         "
       />
       <DetailsRow
         iconUrl="./public/enjoy.png"
         title="Hobbies"
-        description="I love doing Competive Programming ...
+        description="I love hiking, the nature here in Australia is breathtaking, plenty of places we can go
+        visit and enjoy on the weekends to escape a hectic working week. I also like to cook in the free time, 
+        cooking and chilling is absolutely a fav activity for my chill weekends. 
         "
       />
     </div>

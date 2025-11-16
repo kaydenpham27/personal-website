@@ -1,11 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Typography from "@/components/ui/typography";
 import { PersonalDetails } from "./PersonalDetails";
+import { cn } from "@/lib/utils";
 
-export const AboutMeCard = () => {
+type AboutMeCardProps = {
+  className?: string;
+};
+
+export const AboutMeCard = ({ className }: AboutMeCardProps) => {
   return (
     <div className="w-full">
-      <Card className="w-full">
+      <Card className={cn("w-full", className)}>
         <CardHeader>
           <CardTitle>
             <Typography.H1> About Me </Typography.H1>
