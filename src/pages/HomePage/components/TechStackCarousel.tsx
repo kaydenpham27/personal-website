@@ -8,14 +8,17 @@ import {
 import { cn } from "@/lib/utils";
 import React from "react";
 
-type TechStackCarouselProps = {
+export type TechStackCarouselProps = {
   className?: string;
-  imgPaths: string[];
+  imgs: {
+    path: string,
+    className: string,
+  }[],
 };
 
 export const TechStackCarousel = ({
   className,
-  imgPaths,
+  imgs,
 }: TechStackCarouselProps) => {
   const plugin = React.useRef(
     Autoplay({
@@ -36,12 +39,12 @@ export const TechStackCarousel = ({
       onMouseLeave={() => plugin.current.play()}
     >
       <CarouselContent>
-        {imgPaths.map((imgPath, index) => {
+        {imgs.map((img, index) => {
           return (
             <CarouselItem key={index} className="md:basis-1/4 lg:basis-1/6">
               <Card>
                 <CardContent className="self-center">
-                  <img src={imgPath} className="w-25 h-25 mix-blend-multiply" />
+                  <img src={img.path} className={img.className} />
                 </CardContent>
               </Card>
             </CarouselItem>
