@@ -3,12 +3,20 @@ import { ContactMeCard } from "./components/ContactMeCard";
 import { motion } from "motion/react";
 
 const TECH_STACK_IMG_PATHS = [
+  // Clouds
   "./public/tech-stack-images/aws-cloud.png",
+  "./public/tech-stack-images/microsoft-azure.png",
+  // Languages
   "./public/tech-stack-images/c-plus-plus.png",
-  "./public/tech-stack-images/docker.png",
-  "./public/tech-stack-images/microsoft-sql-server.png",
-  "./public/tech-stack-images/postgres.png",
   "./public/tech-stack-images/TS.png",
+  // Containerisation
+  "./public/tech-stack-images/docker.png",
+  "./public/tech-stack-images/kubernetes.png",
+  // Version controls
+  "./public/tech-stack-images/git.png",
+  // Databases
+  "./public/tech-stack-images/postgres.png",
+  "./public/tech-stack-images/mysql.png",
 ];
 
 export const HomePage = () => {
