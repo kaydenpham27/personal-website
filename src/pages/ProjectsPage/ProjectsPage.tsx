@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { ProjectCard, type ProjectCardProps } from "./components";
 import Typography from "@/components/ui/typography";
-import { ProjectProfileCard } from "./components/ProjectProfileCard";
+import { ProfileCard } from "@/components/ProfileCard";
 
 // TODO: This will be retrieved through the API later
 const projects: ProjectCardProps[] = [
@@ -44,7 +44,7 @@ export const ProjectsPage = () => {
     >
       <div className="flex justify-center gap-10 pl-10 pr-10 pt-10">
         <div>
-          <ProjectProfileCard />
+          <ProfileCard />
         </div>
         <div className="flex flex-col items-center gap-10">
           {projects.map((project, index) => {
