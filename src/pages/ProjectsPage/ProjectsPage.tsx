@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { ProjectCard, type ProjectCardProps } from "./components";
-import Typography from "@/components/ui/typography";
 import { ProfileCard } from "@/components/ProfileCard";
+import { TagsCard } from "@/components/TagsCard";
 
 // TODO: This will be retrieved through the API later
 const projects: ProjectCardProps[] = [
@@ -61,7 +61,9 @@ export const ProjectsPage = () => {
             );
           })}
         </div>
-        <Typography.H4> Categories/Filter </Typography.H4>
+        <div>
+          <TagsCard />
+        </div>
       </div>
     </motion.div>
   );
