@@ -4,7 +4,7 @@ import Typography from "./ui/typography";
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { GitHubIcon } from "./GithubIcon";
-import { LinkedIn } from "./LinkedInIcon";
+import { LinkedInIcon } from "./LinkedInIcon";
 
 type GitHubRepoData = {
   forks_count: number;
@@ -144,7 +144,7 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
         </div>
         <div className="flex flex-row space-x-5 items-center">
           <GitHubStats repoName="personal-website" ownerName="kaydenpham27" />
-          <LinkedIn fill="#ffffffff" width="45px" height="45px" />
+          <LinkedInIcon fill="#ffffffff" width="45px" height="45px" />
         </div>
       </div>
       {children}

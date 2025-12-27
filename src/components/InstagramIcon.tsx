@@ -1,9 +1,13 @@
 import { SiInstagram } from "@icons-pack/react-simple-icons";
 
-type InstagramProps = {
+type InstagramIconProps = {
   className?: string;
 };
 
-export const Instagram = ({ className }: InstagramProps) => {
-  return <SiInstagram className={className} />;
+export const InstagramIcon = ({ className }: InstagramIconProps) => {
+  return (
+    <a className={className} href="https://www.instagram.com/farm.loyal/">
+      <SiInstagram />
+    </a>
+  );
 };

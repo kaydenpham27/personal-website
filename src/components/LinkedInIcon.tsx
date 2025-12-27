@@ -1,11 +1,11 @@
-type LinkedInProps = {
+type LinkedInIconProps = {
   className?: string;
   width?: string;
   height?: string;
   fill?: string;
 };
 
-export const LinkedIn = ({ width, height, fill }: LinkedInProps) => {
+export const LinkedInIcon = ({ width, height, fill }: LinkedInIconProps) => {
   return (
     <a
       href="https://www.linkedin.com/in/kienpham04/"

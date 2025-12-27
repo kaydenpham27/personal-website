@@ -5,8 +5,10 @@ import { Coffee, MapPin } from "lucide-react";
 import { Button } from "./ui/button";
 import { GITHUB_PROFILE_URL } from "@/constants/github";
 import { GitHubIcon } from "./GithubIcon";
-import { Instagram } from "./InstagramIcon";
-import { LinkedIn } from "./LinkedInIcon";
+import { InstagramIcon } from "./InstagramIcon";
+import { LinkedInIcon } from "./LinkedInIcon";
+import { MailIcon } from "./Mailcon";
+import { CodeforcesIcon } from "./CodeforcesIcon";
 
 type ProfileCardProps = {
   className?: string;
@@ -16,7 +18,7 @@ export const ProfileCard = ({ className = "" }: ProfileCardProps) => {
   // TODO: Hooks to retrieve data
 
   return (
-    <Card className={cn(className, "w-full max-w-100")}>
+    <Card className={cn(className, "w-full min-w-90")}>
       <CardContent className="flex flex-col justify-center">
         <img
           src="./public/AVA.png"
@@ -70,8 +72,10 @@ export const ProfileCard = ({ className = "" }: ProfileCardProps) => {
           {/* Social Media Links */}
           <div className="flex flex-row justify-around">
             <GitHubIcon width="30px" />
-            <Instagram className="place-self-center" />
-            <LinkedIn fill="#000000ff" height="30px" width="30px" />
+            <InstagramIcon className="place-self-center" />
+            <LinkedInIcon fill="#000000ff" height="30px" width="30px" />
+            <MailIcon className="place-self-center" />
+            <CodeforcesIcon />
           </div>
         </div>
       </CardContent>
