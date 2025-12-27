@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Typography from "@/components/ui/typography";
+import { Calendar1, CalendarCheck } from "lucide-react";
 
 // TODO: Add more stuff here
 export type ProjectCardTag =
@@ -199,6 +200,8 @@ export type ProjectCardProps = {
   githubUrl: string;
   imgPath: string;
   imgClassName: string;
+  startDate: string;
+  endDate: string;
 };
 
 export const ProjectCard = ({
@@ -208,22 +211,38 @@ export const ProjectCard = ({
   imgClassName,
   tags,
   githubUrl,
+  startDate,
+  endDate,
 }: ProjectCardProps) => {
   return (
-    <a className="h-full" href={githubUrl} title={`View ${title} in details`}>
-      <Card className="w-120 h-full items-center shadow-xl/20 transition-all duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-xl cursor-pointer">
-        <CardContent>
-          <img src={imgPath} className={imgClassName} />
-        </CardContent>
-        <CardHeader className="w-100">
+    <a href={githubUrl} title={`View ${title} in details`}>
+      <Card className="items-center shadow-xl/20 transition-all duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-xl cursor-pointer">
+        <CardHeader className="flex flex-col text-start w-full min-w-150">
           <CardTitle>
             <Typography.H4>{title}</Typography.H4>
           </CardTitle>
+
+          <div className="flex flex-row gap-4 justify-start pb-4">
+            {/* Start Date */}
+            <div className="flex flex-row gap-2 items-center">
+              <Calendar1 className="w-5" />
+              <Typography.Small> {startDate} </Typography.Small>
+            </div>
+            {/* End Date */}
+            <div className="flex flex-row gap-2 items-center">
+              <CalendarCheck className="w-5" />
+              <Typography.Small> {endDate} </Typography.Small>
+            </div>
+          </div>
+
           <CardDescription>
             <Typography.Muted>{description}</Typography.Muted>
           </CardDescription>
         </CardHeader>
-        <CardContent className="w-full">
+        <CardContent>
+          <img src={imgPath} className={imgClassName} />
+        </CardContent>
+        <CardContent className="border-t-2 border-gray-200 w-full pt-5">
           <div className="flex flex-row flex-wrap justify-center gap-2">
             {tags.map((tag) => {
               return (

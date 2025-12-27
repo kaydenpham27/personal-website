@@ -7,12 +7,13 @@ import { TagsCard } from "@/components/TagsCard";
 const projects: ProjectCardProps[] = [
   {
     title: "Telegram Clone",
-    description:
-      "I basically cloned telegram I basically cloned telegram I basically cloned telegramI basically cloned telegram I basically cloned telegram",
+    description: "Cloned Telegram using Typescript and AWS",
     tags: ["AWS", "Cloud", "CI/CD", "Backend", "TypeScript", "Tailwind"],
     githubUrl: "https://github.com/kaydenpham27/Telegram.git",
     imgPath: "./public/project-images/telegram.png",
     imgClassName: "w-30 h-30",
+    startDate: "20-8-2025",
+    endDate: "22-8-2025",
   },
   {
     title: "Competive Programming Solutions",
@@ -22,6 +23,8 @@ const projects: ProjectCardProps[] = [
     githubUrl: "https://github.com/kaydenpham27/Competitive-Programming",
     imgPath: "./public/project-images/icpc.png",
     imgClassName: "w-50 h-30",
+    startDate: "20-8-2025",
+    endDate: "22-8-2025",
   },
   {
     title: "Microservice Evaluation",
@@ -31,6 +34,8 @@ const projects: ProjectCardProps[] = [
     githubUrl: "https://github.com/kaydenpham27/MicroserviceEvaluation",
     imgPath: "./public/project-images/eBPF.png",
     imgClassName: "w-60 h-30",
+    startDate: "20-8-2025",
+    endDate: "22-8-2025",
   },
 ];
 
@@ -42,11 +47,11 @@ export const ProjectsPage = () => {
       transition={{ duration: 0.3 }}
       className="space-y-2"
     >
-      <div className="flex justify-center gap-10 pl-10 pr-10 pt-10">
+      <div className="flex justify-center gap-5 pl-10 pr-10 pt-10">
         <div>
           <ProfileCard />
         </div>
-        <div className="flex flex-col items-center gap-10">
+        <div className="flex flex-col items-center gap-5">
           {projects.map((project, index) => {
             return (
               <ProjectCard
@@ -57,6 +62,8 @@ export const ProjectsPage = () => {
                 githubUrl={project.githubUrl}
                 imgPath={project.imgPath}
                 imgClassName={project.imgClassName}
+                startDate={project.startDate}
+                endDate={project.endDate}
               />
             );
           })}

@@ -11,7 +11,7 @@ export const Tag = ({ className, label, count }: TagProps) => {
   return (
     <div
       className={cn(
-        "inline-flex items-center rounded-sm overflow-hidden border-0 border-blue-500 h-6.5",
+        "inline-flex items-center rounded-sm overflow-hidden border-0 border-blue-500 h-7",
         className,
       )}
     >
