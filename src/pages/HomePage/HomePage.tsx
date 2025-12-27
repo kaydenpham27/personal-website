@@ -1,4 +1,9 @@
-import { NewsFeedCard, AboutMeCard, TechStackCarousel, type TechStackCarouselProps } from "./components";
+import {
+  NewsFeedCard,
+  AboutMeCard,
+  TechStackCarousel,
+  type TechStackCarouselProps,
+} from "./components";
 import { ContactMeCard } from "./components/ContactMeCard";
 import { motion } from "motion/react";
 
@@ -15,35 +20,35 @@ const TECH_STACK_IMGS: TechStackCarouselProps["imgs"] = [
   // Languages
   {
     path: "./public/tech-stack-images/c-plus-plus.png",
-    className: "w-25 h-25",  
+    className: "w-25 h-25",
   },
   {
     path: "./public/tech-stack-images/TS.png",
-    className: "w-25 h-25",  
+    className: "w-25 h-25",
   },
   // Containerisation
   {
     path: "./public/tech-stack-images/docker.png",
-    className: "w-25 h-25",  
+    className: "w-25 h-25",
   },
   {
     path: "./public/tech-stack-images/kubernetes.png",
-    className: "w-25 h-25",  
+    className: "w-25 h-25",
   },
   // Version controls
   {
     path: "./public/tech-stack-images/git.png",
-    className: "w-25 h-25",  
+    className: "w-25 h-25",
   },
   // Databases
   {
     path: "./public/tech-stack-images/postgres.png",
-    className: "w-25 h-25",  
+    className: "w-25 h-25",
   },
   {
     path: "./public/tech-stack-images/mysql.png",
-    className: "w-25 h-25",  
-  }
+    className: "w-25 h-25",
+  },
 ];
 
 export const HomePage = () => {

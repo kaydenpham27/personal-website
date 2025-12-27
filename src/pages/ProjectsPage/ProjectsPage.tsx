@@ -1,6 +1,9 @@
 import { motion } from "motion/react";
 import { ProjectCard, type ProjectCardProps } from "./components";
+import Typography from "@/components/ui/typography";
+import { ProjectProfileCard } from "./components/ProjectProfileCard";
 
+// TODO: This will be retrieved through the API later
 const projects: ProjectCardProps[] = [
   {
     title: "Telegram Clone",
@@ -39,20 +42,26 @@ export const ProjectsPage = () => {
       transition={{ duration: 0.3 }}
       className="space-y-2"
     >
-      <div className="grid grid-cols-3 pl-50 pr-50 pt-10 items-center gap-10">
-        {projects.map((project, index) => {
-          return (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-              tags={project.tags}
-              githubUrl={project.githubUrl}
-              imgPath={project.imgPath}
-              imgClassName={project.imgClassName}
-            />
-          );
-        })}
+      <div className="flex justify-center gap-10 pl-10 pr-10 pt-10">
+        <div>
+          <ProjectProfileCard />
+        </div>
+        <div className="flex flex-col items-center gap-10">
+          {projects.map((project, index) => {
+            return (
+              <ProjectCard
+                key={index}
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                githubUrl={project.githubUrl}
+                imgPath={project.imgPath}
+                imgClassName={project.imgClassName}
+              />
+            );
+          })}
+        </div>
+        <Typography.H4> Categories/Filter </Typography.H4>
       </div>
     </motion.div>
   );

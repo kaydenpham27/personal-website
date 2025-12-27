@@ -210,7 +210,7 @@ export const ProjectCard = ({
   githubUrl,
 }: ProjectCardProps) => {
   return (
-    <a href={githubUrl} title={`View ${title} in details`} className="h-full">
+    <a className="h-full" href={githubUrl} title={`View ${title} in details`}>
       <Card className="w-120 h-full items-center shadow-xl/20 transition-all duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-xl cursor-pointer">
         <CardContent>
           <img src={imgPath} className={imgClassName} />
