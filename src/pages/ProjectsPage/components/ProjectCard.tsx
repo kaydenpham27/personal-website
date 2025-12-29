@@ -252,22 +252,16 @@ export const ProjectCard = ({
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="w-full flex-grow">
+        <CardContent className="flex flex-col w-full items-center gap-5">
           <img
             src={imgPath}
-            className={cn(
-              "w-full h-auto object-cover rounded-md",
-              imgClassName,
-            )}
+            className={cn("w-full h-auto border-gray-200 ", imgClassName)}
             alt={title}
-          />
-        </CardContent>
-
-        <CardContent className="w-full border-t-2 border-gray-200 pt-5 mt-auto">
+          />{" "}
           <div className="flex flex-row flex-wrap justify-center gap-2">
             {tags.map((tag) => {
               return (
-                <Badge key={tag} className={getProjectCardTagColor(tag)}>
+                <Badge key={tag} variant={"outline"}>
                   <Typography.Small>{tag}</Typography.Small>
                 </Badge>
               );

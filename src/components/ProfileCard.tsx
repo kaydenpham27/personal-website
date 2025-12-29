@@ -9,6 +9,7 @@ import { InstagramIcon } from "./InstagramIcon";
 import { LinkedInIcon } from "./LinkedInIcon";
 import { MailIcon } from "./Mailcon";
 import { CodeforcesIcon } from "./CodeforcesIcon";
+import { ICON_COLOR } from "@/constants/color";
 
 type ProfileCardProps = {
   className?: string;
@@ -22,7 +23,7 @@ export const ProfileCard = ({ className = "" }: ProfileCardProps) => {
       <CardContent className="flex flex-col justify-center">
         <img
           src="./public/AVA.png"
-          className="w-30 place-self-center rounded-full border-solid border-2 border-gray-700"
+          className="w-30 place-self-center rounded-full border-solid border-1 border-gray-700"
         />
         <Typography.Large className="pt-5">Trung Kien Pham</Typography.Large>
         <Typography.Muted className="italic">
@@ -67,7 +68,7 @@ export const ProfileCard = ({ className = "" }: ProfileCardProps) => {
             <a className="flex" href={GITHUB_PROFILE_URL} target="_blank">
               <Button
                 variant="outline"
-                className="min-w-30"
+                className="min-w-30 cursor-pointer"
                 title="Follow for more"
               >
                 <GitHubIcon />
@@ -77,7 +78,7 @@ export const ProfileCard = ({ className = "" }: ProfileCardProps) => {
             <a className="flex" href={GITHUB_PROFILE_URL} target="_blank">
               <Button
                 variant="outline"
-                className="min-w-30"
+                className="min-w-30 cursor-pointer"
                 title="Buy me a coffee"
               >
                 <Coffee />
@@ -88,9 +89,9 @@ export const ProfileCard = ({ className = "" }: ProfileCardProps) => {
 
           {/* Social Media Links */}
           <div className="flex flex-row justify-around items-center">
-            <GitHubIcon width="20px" />
+            <GitHubIcon width="20px" hoverFill={ICON_COLOR} />
             <InstagramIcon />
-            <LinkedInIcon height="20px" width="20px" />
+            <LinkedInIcon height="20px" width="20px" hoverFill={ICON_COLOR} />
             <MailIcon />
             <CodeforcesIcon />
           </div>
