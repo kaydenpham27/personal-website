@@ -47,7 +47,7 @@ export const ProjectsPage = () => {
       transition={{ duration: 0.3 }}
       className="space-y-2"
     >
-      <div className="flex justify-center gap-5 pl-10 pr-10 pt-10">
+      <div className="flex justify-center gap-5 pl-10 rg-10 pt-10">
         <div>
           <ProfileCard />
         </div>

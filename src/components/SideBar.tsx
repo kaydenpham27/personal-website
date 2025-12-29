@@ -4,13 +4,14 @@ import { Link } from "react-router";
 import { LinkedInIcon } from "./LinkedInIcon";
 import { GitHubIcon } from "./GithubIcon";
 import { cn } from "@/lib/utils";
+import { ICON_COLOR } from "@/constants/color";
 
 export const SideBar = ({ children }: { children: React.ReactNode }) => {
   const [focusSection, setFocusSection] = React.useState("");
 
   return (
     <>
-      <div className="grid grid-cols-[80%_20%] w-full h-12 bg-[#fff] text-[#4a4a4a] pl-40 pr-40">
+      <div className="grid grid-cols-[80%_20%] w-full h-12 bg-[#fff] text-[#4a4a4a] pl-40 pr-40 shadow-md">
         <div className="flex flex-row justify-start">
           <Link
             to="/"
@@ -66,7 +67,7 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
             <GitHubIcon width="30px" height="30px" fill="#4a4a4a" />
           </div>
           <div className="flex w-10 justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors">
-            <LinkedInIcon fill="#4a4a4a" width="30px" height="30px" />
+            <LinkedInIcon fill={ICON_COLOR} width="30px" height="30px" />
           </div>
         </div>
       </div>
