@@ -5,7 +5,7 @@ type MailIconProps = {
   fill?: string;
 };
 
-export const MailIcon = ({ className, fill }: MailIconProps) => {
+export const MailIcon = ({ className }: MailIconProps) => {
   return (
     <a href="mailto:kienpt5kkd@gmail.com" className={className}>
       <Mail width={20} />

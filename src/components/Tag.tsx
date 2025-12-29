@@ -11,19 +11,19 @@ export const Tag = ({ className, label, count }: TagProps) => {
   return (
     <div
       className={cn(
-        "inline-flex items-center rounded-sm overflow-hidden border-0 border-blue-500 h-7",
+        "flex flex-row items-center rounded-[4px] overflow-hidden h-5",
         className,
       )}
     >
       {/* Blue section for label */}
-      <Typography.Muted className="bg-blue-500 text-white px-3 py-1.5">
+      <Typography.Small className="bg-blue-500 text-white px-3 py-1.5">
         {label}
-      </Typography.Muted>
+      </Typography.Small>
 
       {/* White section for count */}
-      <Typography.Muted className="bg-gray-200 text-gray-900 px-3 py-1.5 text-sm font-medium">
+      <Typography.Small className="bg-gray-200 text-gray-900 px-3 py-1.5 text-sm font-medium">
         {count}
-      </Typography.Muted>
+      </Typography.Small>
     </div>
   );
 };

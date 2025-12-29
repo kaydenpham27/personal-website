@@ -45,21 +45,21 @@ export const ProfileCard = ({ className = "" }: ProfileCardProps) => {
                 {" "}
                 POSTS{" "}
               </Typography.Small>
-              <Typography.Lead> 132 </Typography.Lead>
+              <Typography.Lead> 3 </Typography.Lead>
             </div>
             <div className="flex flex-col">
               <Typography.Small className="font-thin font-serif">
                 {" "}
                 CATEGORIES{" "}
               </Typography.Small>
-              <Typography.Lead> 12 </Typography.Lead>
+              <Typography.Lead> 1 </Typography.Lead>
             </div>
             <div className="flex flex-col">
               <Typography.Small className="font-thin font-serif">
                 {" "}
                 TAGS{" "}
               </Typography.Small>
-              <Typography.Lead> 5423 </Typography.Lead>
+              <Typography.Lead> 4 </Typography.Lead>
             </div>
           </div>
 

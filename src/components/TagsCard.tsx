@@ -10,18 +10,18 @@ type TagsCardProps = {
 const TAGS = [
   {
     label: "CP",
-    count: 123,
-  },
-  {
-    label: "Computer Science",
-    count: 41,
-  },
-  {
-    label: "Software Architecture",
-    count: 12,
+    count: 1,
   },
   {
     label: "Git",
+    count: 1,
+  },
+  {
+    label: "Computer Science",
+    count: 1,
+  },
+  {
+    label: "Software Architecture",
     count: 1,
   },
 ];
@@ -31,7 +31,7 @@ export const TagsCard = ({ className }: TagsCardProps) => {
   return (
     <Card className={cn(className, "w-full max-w-90")}>
       <CardHeader className="flex">
-        <Typography.Lead>Tags</Typography.Lead>
+        <Typography.Medium className="font-semibold">Tags</Typography.Medium>
       </CardHeader>
       <CardContent className="flex flex-wrap gap-3">
         {TAGS.map((tag) => {
