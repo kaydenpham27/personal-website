@@ -3,12 +3,15 @@ import Typography from "./ui/typography";
 import { Link } from "react-router";
 import { LinkedInIcon } from "./LinkedInIcon";
 import { GitHubIcon } from "./GithubIcon";
+import { cn } from "@/lib/utils";
 
 export const SideBar = ({ children }: { children: React.ReactNode }) => {
+  const [focusSection, setFocusSection] = React.useState("");
+
   return (
     <>
-      <div className="grid grid-cols-[80%_20%] w-full h-12 bg-[#fff] text-[#4a4a4a] pl-20 pr-20">
-        <div className="flex flex-row justify-center">
+      <div className="grid grid-cols-[80%_20%] w-full h-12 bg-[#fff] text-[#4a4a4a] pl-40 pr-40">
+        <div className="flex flex-row justify-start">
           <Link
             to="/"
             className="flex flex-col items-center justify-center px-3 cursor-pointer transition-colors hover:bg-gray-100"
@@ -17,13 +20,21 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
           </Link>
           <Link
             to="/"
-            className="flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors"
+            className={cn(
+              "flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors",
+              focusSection === "INTRO" ? "text-blue-600" : "",
+            )}
+            onClick={() => setFocusSection("INTRO")}
           >
             <Typography.Small className="font-semibold">INTRO</Typography.Small>
           </Link>
           <Link
             to="/projects"
-            className="flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors"
+            className={cn(
+              "flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors",
+              focusSection === "PROJECTS" ? "text-blue-600" : "",
+            )}
+            onClick={() => setFocusSection("PROJECTS")}
           >
             <Typography.Small className="font-semibold">
               PROJECTS
@@ -31,13 +42,21 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
           </Link>
           <Link
             to="/blogs"
-            className="flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors"
+            className={cn(
+              "flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors",
+              focusSection === "BLOGS" ? "text-blue-600" : "",
+            )}
+            onClick={() => setFocusSection("BLOGS")}
           >
             <Typography.Small className="font-semibold">BLOGS</Typography.Small>
           </Link>
           <Link
             to="/blogs"
-            className="flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors"
+            className={cn(
+              "flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors",
+              focusSection === "LIFE" ? "text-blue-600" : "",
+            )}
+            onClick={() => setFocusSection("LIFE")}
           >
             <Typography.Small className="font-semibold">LIFE</Typography.Small>
           </Link>
