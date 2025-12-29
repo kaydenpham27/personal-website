@@ -1,55 +1,6 @@
-import {
-  NewsFeedCard,
-  AboutMeCard,
-  TechStackCarousel,
-  type TechStackCarouselProps,
-} from "./components";
-import { ContactMeCard } from "./components/ContactMeCard";
 import { motion } from "motion/react";
-
-const TECH_STACK_IMGS: TechStackCarouselProps["imgs"] = [
-  // Clouds
-  {
-    path: "./public/tech-stack-images/aws-cloud.png",
-    className: "w-25 h-25",
-  },
-  {
-    path: "./public/tech-stack-images/microsoft-azure.png",
-    className: "w-25 h-25",
-  },
-  // Languages
-  {
-    path: "./public/tech-stack-images/c-plus-plus.png",
-    className: "w-25 h-25",
-  },
-  {
-    path: "./public/tech-stack-images/TS.png",
-    className: "w-25 h-25",
-  },
-  // Containerisation
-  {
-    path: "./public/tech-stack-images/docker.png",
-    className: "w-25 h-25",
-  },
-  {
-    path: "./public/tech-stack-images/kubernetes.png",
-    className: "w-25 h-25",
-  },
-  // Version controls
-  {
-    path: "./public/tech-stack-images/git.png",
-    className: "w-25 h-25",
-  },
-  // Databases
-  {
-    path: "./public/tech-stack-images/postgres.png",
-    className: "w-25 h-25",
-  },
-  {
-    path: "./public/tech-stack-images/mysql.png",
-    className: "w-25 h-25",
-  },
-];
+import { ProfileCard } from "@/components/ProfileCard";
+import { TagsCard } from "@/components/TagsCard";
 
 export const HomePage = () => {
   return (
@@ -57,17 +8,17 @@ export const HomePage = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="space-y-2"
+      className="space-y-2 mx-auto max-w-380"
     >
-      <div className="flex flex-col w-fit pl-40 pr-40">
-        <div className="pt-6">
-          <AboutMeCard className="shadow-xl/20" />
-        </div>
-        <TechStackCarousel className="pt-6" imgs={TECH_STACK_IMGS} />
-        <div className="grid grid-cols-1 md:grid-cols-[70%_1%_29%] pt-6">
-          <ContactMeCard className="shadow-xl/20" />
-          <div></div>
-          <NewsFeedCard className="shadow-xl/20" />
+      <div className="pl-[5rem] pr-[5rem] pt-10 pb-10">
+        <div className="grid md:grid-cols-[19rem_auto_17rem] grid-cols-1 justify-stretch gap-5">
+          <div>
+            <ProfileCard />
+          </div>
+          <div className="flex flex-row flex-wrap items-center gap-2"></div>
+          <div>
+            <TagsCard />
+          </div>
         </div>
       </div>
     </motion.div>

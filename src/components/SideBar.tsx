@@ -30,7 +30,19 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
               onClick={() => setFocusSection("INTRO")}
             >
               <Typography.Small className="font-semibold">
-                INTRO
+                KIEN'S LOG BOOK
+              </Typography.Small>
+            </Link>
+            <Link
+              to="/portfolio"
+              className={cn(
+                "flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors",
+                focusSection === "PORTFOLIO" ? "text-blue-600" : "",
+              )}
+              onClick={() => setFocusSection("PORTFOLIO")}
+            >
+              <Typography.Small className="font-semibold">
+                PORTFOLIO
               </Typography.Small>
             </Link>
             <Link

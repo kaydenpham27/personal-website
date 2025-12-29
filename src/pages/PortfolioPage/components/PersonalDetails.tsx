@@ -21,11 +21,11 @@ const DetailsRow = ({ iconUrl, title, description }: DetailsRowProps) => {
 export const PersonalDetails = () => {
   return (
     <div className="flex flex-col justify-start items-start pl-4">
-      <Typography.H2> Software Engineer </Typography.H2>
-      <Typography.H3 className="font-normal">Trung Kien Pham</Typography.H3>
-      <Typography.Large className="font-normal pb-6">
+      <Typography.H3> Software Engineer </Typography.H3>
+      <Typography.H4 className="font-normal">Trung Kien Pham</Typography.H4>
+      <Typography.H4 className="font-normal pb-6">
         Brisbane, Australia
-      </Typography.Large>
+      </Typography.H4>
       <DetailsRow
         iconUrl="./public/work_place.png"
         title="Company"
