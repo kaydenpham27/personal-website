@@ -8,7 +8,13 @@ type GitHubIconProps = {
 
 export const GitHubIcon = ({ width, height, fill }: GitHubIconProps) => {
   return (
-    <a href={GITHUB_PROFILE_URL}>
+    <a
+      href={GITHUB_PROFILE_URL}
+      title="Follow me"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group"
+    >
       <svg
         width={width}
         height={height}
