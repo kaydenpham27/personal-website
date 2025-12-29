@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Typography from "@/components/ui/typography";
+import { cn } from "@/lib/utils";
 import { Calendar1, CalendarCheck } from "lucide-react";
 
 // TODO: Add more stuff here
@@ -215,39 +216,59 @@ export const ProjectCard = ({
   endDate,
 }: ProjectCardProps) => {
   return (
-    <a href={githubUrl} title={`View ${title} in details`}>
-      <Card className="items-center shadow-xl/20 transition-all duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-xl cursor-pointer">
-        <CardHeader className="flex flex-col text-start w-full min-w-150">
+    <a
+      href={githubUrl}
+      title={`View ${title} in details`}
+      className="block w-full flex-shrink-0"
+    >
+      <Card className="h-full flex flex-col items-center shadow-xl/20 transition-all duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-xl cursor-pointer">
+        <CardHeader className="flex flex-col text-start w-full">
           <CardTitle>
             <Typography.H4>{title}</Typography.H4>
           </CardTitle>
 
-          <div className="flex flex-row gap-4 justify-start pb-4">
+          <div className="flex flex-wrap gap-2 sm:gap-4 justify-start pb-4">
             {/* Start Date */}
             <div className="flex flex-row gap-2 items-center">
-              <Calendar1 className="w-5" />
-              <Typography.Small> {startDate} </Typography.Small>
+              <Calendar1 className="w-5 flex-shrink-0" />
+              <Typography.Small className="whitespace-nowrap">
+                {startDate}
+              </Typography.Small>
             </div>
+
             {/* End Date */}
             <div className="flex flex-row gap-2 items-center">
-              <CalendarCheck className="w-5" />
-              <Typography.Small> {endDate} </Typography.Small>
+              <CalendarCheck className="w-5 flex-shrink-0" />
+              <Typography.Small className="whitespace-nowrap">
+                {endDate}
+              </Typography.Small>
             </div>
           </div>
 
           <CardDescription>
-            <Typography.Muted>{description}</Typography.Muted>
+            <Typography.Muted className="line-clamp-3">
+              {description}
+            </Typography.Muted>
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <img src={imgPath} className={imgClassName} />
+
+        <CardContent className="w-full flex-grow">
+          <img
+            src={imgPath}
+            className={cn(
+              "w-full h-auto object-cover rounded-md",
+              imgClassName,
+            )}
+            alt={title}
+          />
         </CardContent>
-        <CardContent className="border-t-2 border-gray-200 w-full pt-5">
+
+        <CardContent className="w-full border-t-2 border-gray-200 pt-5 mt-auto">
           <div className="flex flex-row flex-wrap justify-center gap-2">
             {tags.map((tag) => {
               return (
                 <Badge key={tag} className={getProjectCardTagColor(tag)}>
-                  <Typography.Small> {tag} </Typography.Small>
+                  <Typography.Small>{tag}</Typography.Small>
                 </Badge>
               );
             })}

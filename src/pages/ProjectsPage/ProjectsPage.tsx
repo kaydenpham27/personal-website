@@ -45,31 +45,33 @@ export const ProjectsPage = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="space-y-2"
+      className="space-y-2 mx-auto max-w-380"
     >
-      <div className="flex justify-center gap-5 pl-10 rg-10 pt-10">
-        <div>
-          <ProfileCard />
-        </div>
-        <div className="flex flex-col items-center gap-5">
-          {projects.map((project, index) => {
-            return (
-              <ProjectCard
-                key={index}
-                title={project.title}
-                description={project.description}
-                tags={project.tags}
-                githubUrl={project.githubUrl}
-                imgPath={project.imgPath}
-                imgClassName={project.imgClassName}
-                startDate={project.startDate}
-                endDate={project.endDate}
-              />
-            );
-          })}
-        </div>
-        <div>
-          <TagsCard />
+      <div className="pl-[5rem] pr-[5rem] pt-10">
+        <div className="grid grid-cols-[19rem_auto_17rem] justify-stretch gap-5">
+          <div>
+            <ProfileCard />
+          </div>
+          <div className="flex flex-row flex-wrap items-center gap-2">
+            {projects.map((project, index) => {
+              return (
+                <ProjectCard
+                  key={index}
+                  title={project.title}
+                  description={project.description}
+                  tags={project.tags}
+                  githubUrl={project.githubUrl}
+                  imgPath={project.imgPath}
+                  imgClassName={project.imgClassName}
+                  startDate={project.startDate}
+                  endDate={project.endDate}
+                />
+              );
+            })}
+          </div>
+          <div>
+            <TagsCard />
+          </div>
         </div>
       </div>
     </motion.div>

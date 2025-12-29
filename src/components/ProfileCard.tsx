@@ -9,7 +9,6 @@ import { InstagramIcon } from "./InstagramIcon";
 import { LinkedInIcon } from "./LinkedInIcon";
 import { MailIcon } from "./Mailcon";
 import { CodeforcesIcon } from "./CodeforcesIcon";
-import { ICON_COLOR } from "@/constants/color";
 
 type ProfileCardProps = {
   className?: string;
@@ -19,11 +18,11 @@ export const ProfileCard = ({ className = "" }: ProfileCardProps) => {
   // TODO: Hooks to retrieve data
 
   return (
-    <Card className={cn(className, "w-full min-w-70")}>
+    <Card className={cn(className, "w-full")}>
       <CardContent className="flex flex-col justify-center">
         <img
           src="./public/AVA.png"
-          className="w-40 place-self-center rounded-full border-solid border-2 border-gray-700"
+          className="w-30 place-self-center rounded-full border-solid border-2 border-gray-700"
         />
         <Typography.Large className="pt-5">Trung Kien Pham</Typography.Large>
         <Typography.Muted className="italic">
@@ -39,7 +38,7 @@ export const ProfileCard = ({ className = "" }: ProfileCardProps) => {
         </div>
         <div className="flex flex-col gap-6">
           {/* Stats */}
-          <div className="flex flex-row justify-around gap-5">
+          <div className="flex flex-wrap justify-around gap-5">
             <div className="flex flex-col">
               <Typography.Small className="font-thin font-serif">
                 {" "}
@@ -64,12 +63,8 @@ export const ProfileCard = ({ className = "" }: ProfileCardProps) => {
           </div>
 
           {/* Quick links */}
-          <div className="flex justify-center gap-3">
-            <a
-              className="flex flex-wrap"
-              href={GITHUB_PROFILE_URL}
-              target="_blank"
-            >
+          <div className="flex flex-wrap justify-center gap-3">
+            <a className="flex" href={GITHUB_PROFILE_URL} target="_blank">
               <Button
                 variant="outline"
                 className="min-w-30"
@@ -79,11 +74,7 @@ export const ProfileCard = ({ className = "" }: ProfileCardProps) => {
                 <Typography.Muted>Follow</Typography.Muted>
               </Button>
             </a>
-            <a
-              className="flex flex-wrap"
-              href={GITHUB_PROFILE_URL}
-              target="_blank"
-            >
+            <a className="flex" href={GITHUB_PROFILE_URL} target="_blank">
               <Button
                 variant="outline"
                 className="min-w-30"
