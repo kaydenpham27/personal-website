@@ -22,7 +22,7 @@ export const HomePage = () => {
             <CardHeader className="text-start">
               <Typography.H4 className="pb-2"> Phạm Trung Kiên </Typography.H4>
               <img
-                src={`${BASE_URL}/public/kien-with-flower.jpg`}
+                src={`${BASE_URL}/kien-with-flower.jpg`}
                 className="w-180 mx-auto shadow-2xl rounded-sm"
               />
               <Typography.Muted className="mx-auto font-thin text-gray-500">

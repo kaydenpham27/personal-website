@@ -9,6 +9,7 @@ import {
 import Typography from "@/components/ui/typography";
 import type { Post } from "@/types";
 import { Calendar1, CalendarCheck } from "lucide-react";
+import { Link } from "react-router";
 
 type LifeCardProps = Post;
 
@@ -21,8 +22,8 @@ export const LifeCard = ({
   endDate,
 }: LifeCardProps) => {
   return (
-    <a
-      href={`life/${url}`}
+    <Link
+      to={`${url}`}
       title={`View ${title} in details`}
       className="block w-full flex-shrink-0"
     >
@@ -69,6 +70,6 @@ export const LifeCard = ({
           </div>
         </CardContent>
       </Card>
-    </a>
+    </Link>
   );
 };
