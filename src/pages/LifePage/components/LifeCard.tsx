@@ -51,9 +51,9 @@ export const LifeCard = ({
           </div>
 
           <CardDescription>
-            <Typography.Muted className="line-clamp-3">
+            <Typography.Small className="line-clamp-3">
               {description}
-            </Typography.Muted>
+            </Typography.Small>
           </CardDescription>
         </CardHeader>
 
