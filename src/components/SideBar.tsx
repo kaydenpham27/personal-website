@@ -5,6 +5,7 @@ import { LinkedInIcon } from "./LinkedInIcon";
 import { GitHubIcon } from "./GithubIcon";
 import { cn } from "@/lib/utils";
 import { ICON_COLOR } from "@/constants/color";
+import { BASE_URL } from "@/constants";
 
 export const SideBar = ({ children }: { children: React.ReactNode }) => {
   const [focusSection, setFocusSection] = React.useState("");
@@ -19,7 +20,7 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
               className="flex flex-col items-center justify-center px-3 cursor-pointer transition-colors hover:bg-gray-100"
               onClick={() => setFocusSection("")}
             >
-              <img src="./public/daffodils.png" className="w-8" />
+              <img src={`${BASE_URL}/daffodils.png`} className="w-8" />
             </Link>
             <Link
               to="/"

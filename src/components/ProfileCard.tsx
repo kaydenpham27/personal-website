@@ -10,6 +10,7 @@ import { LinkedInIcon } from "./LinkedInIcon";
 import { MailIcon } from "./Mailcon";
 import { CodeforcesIcon } from "./CodeforcesIcon";
 import { ICON_COLOR } from "@/constants/color";
+import { BASE_URL } from "@/constants";
 
 type ProfileCardProps = {
   className?: string;
@@ -22,7 +23,7 @@ export const ProfileCard = ({ className = "" }: ProfileCardProps) => {
     <Card className={cn(className, "w-full")}>
       <CardContent className="flex flex-col justify-center">
         <img
-          src="./public/AVA.png"
+          src={`${BASE_URL}/AVA.png`}
           className="w-30 place-self-center rounded-full border-solid border-1 border-gray-700"
         />
         <Typography.Large className="pt-5">Trung Kien Pham</Typography.Large>

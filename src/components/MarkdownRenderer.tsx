@@ -11,7 +11,9 @@ const components: Components = {
     <Typography.H1 className="text-start mb-4">{children}</Typography.H1>
   ),
   h2: ({ children }) => (
-    <Typography.H2 className="text-start mb-4">{children}</Typography.H2>
+    <Typography.H2 className="text-start mb-4 font-bold">
+      {children}
+    </Typography.H2>
   ),
   h3: ({ children }) => (
     <Typography.H3 className="text-start">{children}</Typography.H3>
@@ -20,7 +22,9 @@ const components: Components = {
     <Typography.H4 className="text-start">{children}</Typography.H4>
   ),
   p: ({ children }) => (
-    <Typography.P className="text-start mb-4">{children}</Typography.P>
+    <Typography.P className="text-start mb-4 font-thin">
+      {children}
+    </Typography.P>
   ),
   code: ({ className, children }) => {
     return (
@@ -38,6 +42,16 @@ const components: Components = {
     <ol className="list-decimal list-inside mb-4 space-y-2">{children}</ol>
   ),
   li: ({ children }) => <li className="ml-4 text-gray-800">{children}</li>,
+  img: ({ src, alt }) => (
+    <div className="flex flex-col text-center">
+      <img
+        src={src}
+        alt={alt}
+        className="max-w-150 max-h-150 mx-auto rounded-lg mt-4"
+      />
+      <Typography.P className="font-medium text-gray-500">{alt}</Typography.P>
+    </div>
+  ),
 };
 
 type MarkdownRendererProps = {

@@ -1,19 +1,21 @@
-import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { ProfileCard } from "@/components/ProfileCard";
 import { TagsCard } from "@/components/TagsCard";
-import { Card, CardContent } from "@/components/ui/card";
+import type { Post } from "@/types";
 import { motion } from "motion/react";
-import React from "react";
+import { LifeCard } from "./components/LifeCard";
+
+const pages: Post[] = [
+  {
+    title: "North Stradbroke Island",
+    description: "A trip to North Stradbroke Island",
+    url: "north-stradbroke-island-25-12-2025.md",
+    startDate: "25-12-2025",
+    endDate: "25-12-2025",
+    tags: ["Australia", "QLD"],
+  },
+];
 
 export const LifePage = () => {
-  const [markdown, setMarkdown] = React.useState("");
-
-  React.useEffect(() => {
-    fetch("./public/something.md")
-      .then((res) => res.text())
-      .then((text) => setMarkdown(text));
-  }, []);
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -26,11 +28,21 @@ export const LifePage = () => {
           <div>
             <ProfileCard />
           </div>
-          <Card>
-            <CardContent>
-              <MarkdownRenderer content={markdown} />
-            </CardContent>
-          </Card>
+          <div className="flex flex-row flex-wrap items-start gap-2">
+            {pages.map((page, index) => {
+              return (
+                <LifeCard
+                  key={index}
+                  title={page.title}
+                  description={page.description}
+                  url={page.url}
+                  startDate={page.startDate}
+                  endDate={page.endDate}
+                  tags={page.tags}
+                />
+              );
+            })}
+          </div>
           <div>
             <TagsCard />
           </div>
