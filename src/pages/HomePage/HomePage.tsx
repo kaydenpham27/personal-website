@@ -1,50 +1,8 @@
-import { NewsFeedCard, AboutMeCard, TechStackCarousel, type TechStackCarouselProps } from "./components";
-import { ContactMeCard } from "./components/ContactMeCard";
 import { motion } from "motion/react";
-
-const TECH_STACK_IMGS: TechStackCarouselProps["imgs"] = [
-  // Clouds
-  {
-    path: "./public/tech-stack-images/aws-cloud.png",
-    className: "w-25 h-25",
-  },
-  {
-    path: "./public/tech-stack-images/microsoft-azure.png",
-    className: "w-25 h-25",
-  },
-  // Languages
-  {
-    path: "./public/tech-stack-images/c-plus-plus.png",
-    className: "w-25 h-25",  
-  },
-  {
-    path: "./public/tech-stack-images/TS.png",
-    className: "w-25 h-25",  
-  },
-  // Containerisation
-  {
-    path: "./public/tech-stack-images/docker.png",
-    className: "w-25 h-25",  
-  },
-  {
-    path: "./public/tech-stack-images/kubernetes.png",
-    className: "w-25 h-25",  
-  },
-  // Version controls
-  {
-    path: "./public/tech-stack-images/git.png",
-    className: "w-25 h-25",  
-  },
-  // Databases
-  {
-    path: "./public/tech-stack-images/postgres.png",
-    className: "w-25 h-25",  
-  },
-  {
-    path: "./public/tech-stack-images/mysql.png",
-    className: "w-25 h-25",  
-  }
-];
+import { ProfileCard } from "@/components/ProfileCard";
+import { TagsCard } from "@/components/TagsCard";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import Typography from "@/components/ui/typography";
 
 export const HomePage = () => {
   return (
@@ -52,17 +10,85 @@ export const HomePage = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="space-y-2"
+      className="space-y-2 mx-auto max-w-380"
     >
-      <div className="flex flex-col w-fit pl-40 pr-40">
-        <div className="pt-6">
-          <AboutMeCard className="shadow-xl/20" />
-        </div>
-        <TechStackCarousel className="pt-6" imgs={TECH_STACK_IMGS} />
-        <div className="grid grid-cols-1 md:grid-cols-[70%_1%_29%] pt-6">
-          <ContactMeCard className="shadow-xl/20" />
-          <div></div>
-          <NewsFeedCard className="shadow-xl/20" />
+      <div className="pl-[5rem] pr-[5rem] pt-10 pb-10">
+        <div className="grid md:grid-cols-[19rem_auto_17rem] grid-cols-1 justify-stretch gap-5">
+          <div>
+            <ProfileCard />
+          </div>
+          <Card className="w-full">
+            <CardHeader className="text-start">
+              <Typography.H4 className="pb-2"> Phạm Trung Kiên </Typography.H4>
+              <img
+                src="./public/kien-with-flower.jpg"
+                className="w-180 mx-auto shadow-2xl rounded-sm"
+              />
+              <Typography.Muted className="mx-auto font-thin text-gray-500">
+                Kien at Nabana no Sato, Japan in Jan, 2023
+              </Typography.Muted>
+            </CardHeader>
+            <CardContent className="flex flex-col text-start gap-2">
+              {/* Who Am I */}
+              <Typography.Large>Who am I</Typography.Large>
+              <Typography.Small className="font-thin leading-5">
+                I'm Kien Pham, a Software Engineer at Nanoputian. I develop and
+                monitor integration solutions across Workforce Management,
+                Timesheets, Payroll, HRIS, and ERP ecosystem. Besides, I'm also
+                responsible for building and improving the company's internal
+                products. It seems like a boring job; however, I think I
+                actually enjoy it! Building integrations is like solving ad-hoc
+                communication problems for systems, and once you get them
+                talking to each other, you tend to gain some sort of
+                satisfaction and have some fun.
+              </Typography.Small>
+              <Typography.Small className="font-thin leading-5">
+                My early passion in high school was doing Competitive
+                Programming. Yes, if you are not familiar with the term, it's
+                somewhat similar to Leetcode or SWE interview questions. I love
+                the satisfaction after solving a problem, and this satisfaction
+                gradually became a love for beautiful algorithms and techniques.
+                Thinking back, I believe such an early exposure to a subset of
+                Computer Science definitely lighten my curiosity to the boarder
+                universe of Computer.
+              </Typography.Small>
+              <Typography.Small className="font-thin leading-5">
+                I graduated with a bachelor of Computer Science from Queensland
+                University of Technology, where I spent a few semester working
+                as a research assistant. After graduating, I used to have the
+                thought of doing a PhD or Master in Quantum Computing or
+                Computer Science but unfortunately, this plan is cancled or
+                postponed to the far future. There are things that I need to do
+                first.
+              </Typography.Small>
+
+              {/* What is this site */}
+              <Typography.Large className="pt-4">
+                What is this site
+              </Typography.Large>
+              <Typography.Small className="font-thin leading-5">
+                This is my log book, where I store my thoughts and comments on
+                various aspects of life, expect to see reviews on books,
+                solutions for interesting problems, or at least interesting to
+                me, discussions on Computer Science topics, and maybe beautiful
+                images.
+              </Typography.Small>
+
+              {/* How to contact me */}
+              <Typography.Large className="pt-4">
+                How to contact me
+              </Typography.Large>
+              <Typography.Small className="font-thin leading-5">
+                If you have any questions, want to discuss further on a topic,
+                or simply just want to say hi. You can email me directly or
+                connect with me on LinkedIn through various links I placed on my
+                website. Please feel encouraged to do any of the above!
+              </Typography.Small>
+            </CardContent>
+          </Card>
+          <div>
+            <TagsCard />
+          </div>
         </div>
       </div>
     </motion.div>

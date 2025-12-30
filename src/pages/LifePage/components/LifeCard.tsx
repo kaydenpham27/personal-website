@@ -7,98 +7,22 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Typography from "@/components/ui/typography";
-import { cn } from "@/lib/utils";
+import type { Post } from "@/types";
 import { Calendar1, CalendarCheck } from "lucide-react";
 
-// TODO: Add more stuff here
-export type ProjectCardTag =
-  // Cloud & Infrastructure
-  | "AWS"
-  | "Azure"
-  | "GCP"
-  | "Cloud"
-  | "Serverless"
-  | "CI/CD"
-  | "Docker"
-  | "Kubernetes"
+type LifeCardProps = Post;
 
-  // Languages
-  | "TypeScript"
-  | "JavaScript"
-  | "Python"
-  | "Go"
-  | "Java"
-  | "Rust"
-  | "C++"
-
-  // Frontend
-  | "React"
-  | "Next.js"
-  | "Vue"
-  | "Svelte"
-  | "Tailwind"
-  | "Vite"
-
-  // Backend
-  | "Node.js"
-  | "Express"
-  | "FastAPI"
-  | "Django"
-  | "Spring Boot"
-
-  // Databases
-  | "PostgreSQL"
-  | "MongoDB"
-  | "DynamoDB"
-  | "Redis"
-  | "MySQL"
-
-  // Tools & Concepts
-  | "API"
-  | "GraphQL"
-  | "REST"
-  | "WebSocket"
-  | "OAuth"
-  | "JWT"
-  | "Microservices"
-  | "Monorepo"
-
-  // Categories
-  | "Web"
-  | "Mobile"
-  | "CLI"
-  | "Library"
-  | "Full Stack"
-  | "Frontend"
-  | "Backend"
-  | "DevOps"
-  | "AI/ML"
-  | "Open Source";
-
-export type ProjectCardProps = {
-  title: string;
-  description: string;
-  tags: ProjectCardTag[];
-  githubUrl: string;
-  imgPath: string;
-  imgClassName: string;
-  startDate: string;
-  endDate: string;
-};
-
-export const ProjectCard = ({
+export const LifeCard = ({
   title,
   description,
-  imgPath,
-  imgClassName,
   tags,
-  githubUrl,
+  url,
   startDate,
   endDate,
-}: ProjectCardProps) => {
+}: LifeCardProps) => {
   return (
     <a
-      href={githubUrl}
+      href={`life/${url}`}
       title={`View ${title} in details`}
       className="block w-full flex-shrink-0"
     >
@@ -127,18 +51,13 @@ export const ProjectCard = ({
           </div>
 
           <CardDescription>
-            <Typography.Muted className="line-clamp-3">
+            <Typography.Small className="line-clamp-3">
               {description}
-            </Typography.Muted>
+            </Typography.Small>
           </CardDescription>
         </CardHeader>
 
         <CardContent className="flex flex-col w-full items-center gap-5">
-          <img
-            src={imgPath}
-            className={cn("w-full h-auto border-gray-200 ", imgClassName)}
-            alt={title}
-          />{" "}
           <div className="flex flex-row flex-wrap justify-center gap-2">
             {tags.map((tag) => {
               return (

@@ -1,4 +1,5 @@
 import Typography from "@/components/ui/typography";
+import { BASE_URL } from "@/constants";
 
 type DetailsRowProps = {
   iconUrl: string;
@@ -21,25 +22,25 @@ const DetailsRow = ({ iconUrl, title, description }: DetailsRowProps) => {
 export const PersonalDetails = () => {
   return (
     <div className="flex flex-col justify-start items-start pl-4">
-      <Typography.H2> Software Engineer </Typography.H2>
-      <Typography.H3 className="font-normal">Trung Kien Pham</Typography.H3>
-      <Typography.Large className="font-normal pb-6">
+      <Typography.H3> Software Engineer </Typography.H3>
+      <Typography.H4 className="font-normal">Trung Kien Pham</Typography.H4>
+      <Typography.H4 className="font-normal pb-6">
         Brisbane, Australia
-      </Typography.Large>
+      </Typography.H4>
       <DetailsRow
-        iconUrl="./public/work_place.png"
+        iconUrl={`${BASE_URL}/work_place.png`}
         title="Company"
         description="Nanoputian"
       />
       <DetailsRow
-        iconUrl="./public/energy_drink.png"
+        iconUrl={`${BASE_URL}/energy_drink.png`}
         title="Drink"
         description="I love iced long black! Don't really know if 
         this is what they call it anywhere else, but in Australia, this is a GOATed drink.
         "
       />
       <DetailsRow
-        iconUrl="./public/enjoy.png"
+        iconUrl={`${BASE_URL}/enjoy.png`}
         title="Hobbies"
         description="I love hiking, the nature here in Australia is breathtaking, plenty of places we can go
         visit and enjoy on the weekends to escape a hectic working week. I also like to cook in the free time, 

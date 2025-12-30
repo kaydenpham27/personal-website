@@ -1,15 +1,19 @@
 import { motion } from "motion/react";
 import { ProjectCard, type ProjectCardProps } from "./components";
+import { ProfileCard } from "@/components/ProfileCard";
+import { TagsCard } from "@/components/TagsCard";
 
+// TODO: This will be retrieved through the API later
 const projects: ProjectCardProps[] = [
   {
     title: "Telegram Clone",
-    description:
-      "I basically cloned telegram I basically cloned telegram I basically cloned telegramI basically cloned telegram I basically cloned telegram",
+    description: "Cloned Telegram using Typescript and AWS",
     tags: ["AWS", "Cloud", "CI/CD", "Backend", "TypeScript", "Tailwind"],
     githubUrl: "https://github.com/kaydenpham27/Telegram.git",
     imgPath: "./public/project-images/telegram.png",
     imgClassName: "w-30 h-30",
+    startDate: "20-8-2025",
+    endDate: "22-8-2025",
   },
   {
     title: "Competive Programming Solutions",
@@ -19,6 +23,8 @@ const projects: ProjectCardProps[] = [
     githubUrl: "https://github.com/kaydenpham27/Competitive-Programming",
     imgPath: "./public/project-images/icpc.png",
     imgClassName: "w-50 h-30",
+    startDate: "20-8-2025",
+    endDate: "22-8-2025",
   },
   {
     title: "Microservice Evaluation",
@@ -28,6 +34,8 @@ const projects: ProjectCardProps[] = [
     githubUrl: "https://github.com/kaydenpham27/MicroserviceEvaluation",
     imgPath: "./public/project-images/eBPF.png",
     imgClassName: "w-60 h-30",
+    startDate: "20-8-2025",
+    endDate: "22-8-2025",
   },
 ];
 
@@ -37,22 +45,34 @@ export const ProjectsPage = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="space-y-2"
+      className="space-y-2 mx-auto max-w-380"
     >
-      <div className="grid grid-cols-3 pl-50 pr-50 pt-10 items-center gap-10">
-        {projects.map((project, index) => {
-          return (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-              tags={project.tags}
-              githubUrl={project.githubUrl}
-              imgPath={project.imgPath}
-              imgClassName={project.imgClassName}
-            />
-          );
-        })}
+      <div className="pl-[5rem] pr-[5rem] pt-10 pb-10">
+        <div className="grid md:grid-cols-[19rem_auto_17rem] grid-cols-1 justify-stretch gap-5">
+          <div>
+            <ProfileCard />
+          </div>
+          <div className="flex flex-row flex-wrap items-center gap-2">
+            {projects.map((project, index) => {
+              return (
+                <ProjectCard
+                  key={index}
+                  title={project.title}
+                  description={project.description}
+                  tags={project.tags}
+                  githubUrl={project.githubUrl}
+                  imgPath={project.imgPath}
+                  imgClassName={project.imgClassName}
+                  startDate={project.startDate}
+                  endDate={project.endDate}
+                />
+              );
+            })}
+          </div>
+          <div>
+            <TagsCard />
+          </div>
+        </div>
       </div>
     </motion.div>
   );
