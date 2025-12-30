@@ -70,7 +70,7 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
               </Typography.Small>
             </Link>
             <Link
-              to="/blogs"
+              to="/life"
               className={cn(
                 "flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors",
                 focusSection === "LIFE" ? "text-blue-600" : "",

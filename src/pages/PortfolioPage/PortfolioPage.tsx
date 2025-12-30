@@ -1,10 +1,8 @@
 import {
-  NewsFeedCard,
   AboutMeCard,
   TechStackCarousel,
   type TechStackCarouselProps,
 } from "./components";
-import { ContactMeCard } from "./components/ContactMeCard";
 import { motion } from "motion/react";
 
 const TECH_STACK_IMGS: TechStackCarouselProps["imgs"] = [
@@ -64,11 +62,11 @@ export const PortfolioPage = () => {
           <AboutMeCard className="shadow-xl/20" />
         </div>
         <TechStackCarousel className="pt-6" imgs={TECH_STACK_IMGS} />
-        <div className="grid grid-cols-1 md:grid-cols-[70%_1%_29%] pt-6">
+        {/* <div className="grid grid-cols-1 md:grid-cols-[70%_1%_29%] pt-6">
           <ContactMeCard className="shadow-xl/20" />
           <div></div>
           <NewsFeedCard className="shadow-xl/20" />
-        </div>
+        </div> */}
       </div>
     </motion.div>
   );
