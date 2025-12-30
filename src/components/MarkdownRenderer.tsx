@@ -49,7 +49,9 @@ const components: Components = {
         alt={alt}
         className="max-w-150 max-h-150 mx-auto rounded-lg mt-4"
       />
-      <Typography.P className="font-medium text-gray-500">{alt}</Typography.P>
+      <Typography.Muted className="mx-auto font-thin text-gray-500 mt-2">
+        {alt}
+      </Typography.Muted>
     </div>
   ),
 };
