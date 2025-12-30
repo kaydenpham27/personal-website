@@ -11,9 +11,9 @@ import React from "react";
 export type TechStackCarouselProps = {
   className?: string;
   imgs: {
-    path: string,
-    className: string,
-  }[],
+    path: string;
+    className: string;
+  }[];
 };
 
 export const TechStackCarousel = ({
