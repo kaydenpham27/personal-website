@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { ICON_COLOR } from "@/constants/color";
 import { BASE_URL } from "@/constants";
 import { Menu, X } from "lucide-react";
+import { motion } from "motion/react";
 
 export const SideBar = ({ children }: { children: React.ReactNode }) => {
   const [focusSection, setFocusSection] = React.useState("");
@@ -14,17 +15,17 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
 
   const navItems = [
     { to: "/", label: "KIEN'S LOG BOOK", section: "INTRO" },
-    { to: "/portfolio", label: "PORTFOLIO", section: "PORTFOLIO" },
+    // { to: "/portfolio", label: "PORTFOLIO", section: "PORTFOLIO" },
     { to: "/projects", label: "PROJECTS", section: "PROJECTS" },
-    { to: "/blogs", label: "BLOGS", section: "BLOGS" },
+    // { to: "/blogs", label: "BLOGS", section: "BLOGS" },
     { to: "/life", label: "LIFE", section: "LIFE" },
   ];
 
   return (
     <>
-      <div className="bg-[#fff] text-[#4a4a4a] pl-[5rem] pr-[5rem] shadow-md">
+      <div className="bg-[#fff] text-[#4a4a4a] shadow-md">
         {/* Desktop Display */}
-        <div className="hidden lg:flex flex-row mx-auto max-w-345 h-12 justify-between overflow-x-auto scrollbar-hide">
+        <div className="hidden lg:flex flex-row mx-auto max-w-380 pl-[2rem] pr-[2rem] h-12 justify-between overflow-x-auto scrollbar-hidden">
           <div className="flex flex-row">
             <Link
               to="/"
@@ -33,22 +34,22 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
             >
               <img src={`${BASE_URL}/daffodils.png`} className="w-8" />
             </Link>
-            {
-              navItems.map((item) => {
-                return <Link
+            {navItems.map((item) => {
+              return (
+                <Link
                   to={item.to}
                   className={cn(
                     "flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors",
-                    focusSection === "INTRO" ? "text-blue-600" : "",
+                    focusSection === item.section ? "text-blue-600" : "",
                   )}
                   onClick={() => setFocusSection(item.section)}
                 >
-                <Typography.Small className="font-semibold">
-                  {item.label}
-                </Typography.Small>
+                  <Typography.Small className="font-semibold">
+                    {item.label}
+                  </Typography.Small>
                 </Link>
-              }) 
-            }
+              );
+            })}
           </div>
           <div className="flex flex-row">
             <div className="flex w-10 justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors px-3">
@@ -61,12 +62,12 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
         </div>
 
         {/* Mobile Display */}
-        <div className="flex flex-col lg:hidden mx-auto max-w-345">
-          <div className="flex flex-row w-full items-center justify-between">
+        <div className="flex flex-col lg:hidden mx-auto max-w-380 pl-[2rem] pr-[2rem]">
+          <div className="flex flex-row w-full items-center justify-between h-12 px-3">
             <Link to="/" onClick={() => setFocusSection("")}>
               <img
                 src={`${BASE_URL}/daffodils.png`}
-                className="w-8 h-8"
+                className="w-8"
                 alt="Logo"
               />
             </Link>
@@ -122,7 +123,14 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
           )}
         </div>
       </div>
-      {children}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="space-y-2 mx-auto max-w-380 pl-[2rem] pr-[2rem] pt-10 pb-10"
+      >
+        {children}
+      </motion.div>
     </>
   );
 };
