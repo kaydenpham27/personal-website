@@ -33,66 +33,22 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
             >
               <img src={`${BASE_URL}/daffodils.png`} className="w-8" />
             </Link>
-            <Link
-              to="/"
-              className={cn(
-                "flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors",
-                focusSection === "INTRO" ? "text-blue-600" : "",
-              )}
-              onClick={() => setFocusSection("INTRO")}
-            >
-              <Typography.Small className="font-semibold">
-                KIEN'S LOG BOOK
-              </Typography.Small>
-            </Link>
-            <Link
-              to="/portfolio"
-              className={cn(
-                "flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors",
-                focusSection === "PORTFOLIO" ? "text-blue-600" : "",
-              )}
-              onClick={() => setFocusSection("PORTFOLIO")}
-            >
-              <Typography.Small className="font-semibold">
-                PORTFOLIO
-              </Typography.Small>
-            </Link>
-            <Link
-              to="/projects"
-              className={cn(
-                "flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors",
-                focusSection === "PROJECTS" ? "text-blue-600" : "",
-              )}
-              onClick={() => setFocusSection("PROJECTS")}
-            >
-              <Typography.Small className="font-semibold">
-                PROJECTS
-              </Typography.Small>
-            </Link>
-            <Link
-              to="/blogs"
-              className={cn(
-                "flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors",
-                focusSection === "BLOGS" ? "text-blue-600" : "",
-              )}
-              onClick={() => setFocusSection("BLOGS")}
-            >
-              <Typography.Small className="font-semibold">
-                BLOGS
-              </Typography.Small>
-            </Link>
-            <Link
-              to="/life"
-              className={cn(
-                "flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors",
-                focusSection === "LIFE" ? "text-blue-600" : "",
-              )}
-              onClick={() => setFocusSection("LIFE")}
-            >
-              <Typography.Small className="font-semibold">
-                LIFE
-              </Typography.Small>
-            </Link>
+            {
+              navItems.map((item) => {
+                return <Link
+                  to={item.to}
+                  className={cn(
+                    "flex items-center px-3 cursor-pointer hover:bg-gray-100 hover:text-blue-600 transition-colors",
+                    focusSection === "INTRO" ? "text-blue-600" : "",
+                  )}
+                  onClick={() => setFocusSection(item.section)}
+                >
+                <Typography.Small className="font-semibold">
+                  {item.label}
+                </Typography.Small>
+                </Link>
+              }) 
+            }
           </div>
           <div className="flex flex-row">
             <div className="flex w-10 justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors px-3">
@@ -155,25 +111,12 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
               </nav>
 
               <div className="flex justify-center gap-4 py-4 border-t border-gray-200">
-                <a
-                  href="https://github.com/kaydenpham27"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 hover:bg-gray-100 rounded-md transition-colors"
-                  aria-label="GitHub"
-                >
+                <div className="flex w-10 justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors px-3">
                   <GitHubIcon width="30px" height="30px" fill="#4a4a4a" />
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/kienpham04/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 hover:bg-gray-100 rounded-md transition-colors"
-                  aria-label="LinkedIn"
-                >
+                </div>
+                <div className="flex w-10 justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors">
                   <LinkedInIcon fill={ICON_COLOR} width="30px" height="30px" />
-                </a>
+                </div>
               </div>
             </div>
           )}
