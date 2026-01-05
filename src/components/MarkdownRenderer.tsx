@@ -43,12 +43,8 @@ const components: Components = {
   ),
   li: ({ children }) => <li className="ml-4 text-gray-800">{children}</li>,
   img: ({ src, alt }) => (
-    <div className="flex flex-col text-center">
-      <img
-        src={src}
-        alt={alt}
-        className="max-w-150 max-h-150 mx-auto rounded-lg mt-4"
-      />
+    <div className="flex flex-col text-center max-w-150 mx-auto">
+      <img src={src} alt={alt} className="w-fit h-fit rounded-lg mt-4" />
       <Typography.Muted className="mx-auto font-thin text-gray-500 mt-2">
         {alt}
       </Typography.Muted>

@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import { LinkedInIcon } from "./LinkedInIcon";
 import { GitHubIcon } from "./GithubIcon";
 import { cn } from "@/lib/utils";
-import { ICON_COLOR } from "@/constants/color";
+import { ICON_COLOR, ICON_HOVER_COLOR } from "@/constants/color";
 import { BASE_URL } from "@/constants";
 import { Menu, X } from "lucide-react";
 import { motion } from "motion/react";
@@ -12,6 +12,8 @@ import { motion } from "motion/react";
 export const SideBar = ({ children }: { children: React.ReactNode }) => {
   const [focusSection, setFocusSection] = React.useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [mouseEnterGitHub, setMouseEnterGitHub] = React.useState(false);
+  const [mouseEnterLinkedIn, setMouseEnterLinkedIn] = React.useState(false);
 
   const navItems = [
     { to: "/", label: "KIEN'S LOG BOOK", section: "INTRO" },
@@ -52,11 +54,35 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
             })}
           </div>
           <div className="flex flex-row">
-            <div className="flex w-10 justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors px-3">
-              <GitHubIcon width="30px" height="30px" fill="#4a4a4a" />
+            <div
+              className="flex w-10 justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors px-3"
+              onMouseEnter={() => setMouseEnterGitHub(true)}
+              onMouseLeave={() => setMouseEnterGitHub(false)}
+            >
+              {mouseEnterGitHub ? (
+                <GitHubIcon
+                  width="30px"
+                  height="30px"
+                  fill={ICON_HOVER_COLOR}
+                />
+              ) : (
+                <GitHubIcon width="30px" height="30px" fill={ICON_COLOR} />
+              )}
             </div>
-            <div className="flex w-10 justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors">
-              <LinkedInIcon fill={ICON_COLOR} width="30px" height="30px" />
+            <div
+              className="flex w-10 justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors"
+              onMouseEnter={() => setMouseEnterLinkedIn(true)}
+              onMouseLeave={() => setMouseEnterLinkedIn(false)}
+            >
+              {mouseEnterLinkedIn ? (
+                <LinkedInIcon
+                  width="30px"
+                  height="30px"
+                  fill={ICON_HOVER_COLOR}
+                />
+              ) : (
+                <LinkedInIcon width="30px" height="30px" fill={ICON_COLOR} />
+              )}
             </div>
           </div>
         </div>
@@ -111,11 +137,11 @@ export const SideBar = ({ children }: { children: React.ReactNode }) => {
                 ))}
               </nav>
 
-              <div className="flex justify-center gap-4 py-4 border-t border-gray-200">
-                <div className="flex w-10 justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors px-3">
+              <div className="flex justify-center gap-4 py-4 border-t ">
+                <div className="flex w-10 justify-center items-center cursor-pointer px-3">
                   <GitHubIcon width="30px" height="30px" fill="#4a4a4a" />
                 </div>
-                <div className="flex w-10 justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors">
+                <div className="flex w-10 justify-center items-center cursor-pointer">
                   <LinkedInIcon fill={ICON_COLOR} width="30px" height="30px" />
                 </div>
               </div>
