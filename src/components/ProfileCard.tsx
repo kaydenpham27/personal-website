@@ -9,7 +9,6 @@ import { InstagramIcon } from "./InstagramIcon";
 import { LinkedInIcon } from "./LinkedInIcon";
 import { MailIcon } from "./Mailcon";
 import { CodeforcesIcon } from "./CodeforcesIcon";
-import { ICON_COLOR } from "@/constants/color";
 import { BASE_URL } from "@/constants";
 
 type ProfileCardProps = {
@@ -90,9 +89,17 @@ export const ProfileCard = ({ className = "" }: ProfileCardProps) => {
 
           {/* Social Media Links */}
           <div className="flex flex-row justify-around items-center">
-            <GitHubIcon width="20px" hoverFill={ICON_COLOR} />
-            <InstagramIcon />
-            <LinkedInIcon height="20px" width="20px" hoverFill={ICON_COLOR} />
+            <GitHubIcon
+              width="25px"
+              className="hover:bg-transparent"
+              colorChangeOnHover={false}
+            />
+            <InstagramIcon width="22px" className="hover:bg-transparent" />
+            <LinkedInIcon
+              height="25px"
+              className="hover:bg-transparent"
+              colorChangeOnHover={false}
+            />
             <MailIcon />
             <CodeforcesIcon />
           </div>
