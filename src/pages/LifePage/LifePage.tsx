@@ -7,7 +7,7 @@ const pages: Post[] = [
   {
     title: "North Stradbroke Island",
     description: "A trip to North Stradbroke Island - Vietnamese Version",
-    url: "north-stradbroke-island-25-12-2025.md",
+    url: "north-stradbroke-island-25-12-2025",
     startDate: "25-12-2025",
     endDate: "25-12-2025",
     tags: ["Australia", "QLD"],

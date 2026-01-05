@@ -71,7 +71,7 @@ export const ProfileCard = ({ className = "" }: ProfileCardProps) => {
                 className="min-w-30 cursor-pointer"
                 title="Follow for more"
               >
-                <GitHubIcon />
+                <GitHubIcon className="px-0 w-5" />
                 <Typography.Muted>Follow</Typography.Muted>
               </Button>
             </a>

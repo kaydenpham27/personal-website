@@ -10,7 +10,7 @@ export const LifePostPage = () => {
   const [markdown, setMarkdown] = React.useState("");
 
   React.useEffect(() => {
-    fetch(`${BASE_URL}/${contentUri}`)
+    fetch(`${BASE_URL}/life/${contentUri}/index.md`)
       .then((res) => res.text())
       .then((res) => setMarkdown(res));
   }, [contentUri]);
