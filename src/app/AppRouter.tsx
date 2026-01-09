@@ -1,4 +1,5 @@
 import { SideBar } from "@/components/SideBar";
+import { BASE_URL } from "@/constants";
 import { BlogsPage } from "@/pages/BlogsPage";
 import { HomePage } from "@/pages/HomePage";
 import { LifePage, LifePostPage } from "@/pages/LifePage";
@@ -8,7 +9,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 
 export const AppRouter = () => {
   return (
-    <BrowserRouter basename="personal-website/">
+    <BrowserRouter basename={BASE_URL}>
       <SideBar>
         <Routes>
           <Route path="/" element={<HomePage />} />
